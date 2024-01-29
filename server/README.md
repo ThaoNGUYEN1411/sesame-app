@@ -35,7 +35,7 @@ Pour exécuter sur votre ordinateur, suivez ces étapes :
  
 ### Cloning pour le serveur
  
-    git clone  
+    git clone https://github.com/ThaoNGUYEN1411/sesame-app
     cd server/
  
 ### Configuration d'environment variables
