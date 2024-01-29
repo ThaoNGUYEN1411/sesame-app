@@ -53,15 +53,14 @@ const Article = () => {
 	console.log("listArticles", listArticles);
 	return (
 		<div>
-			<h1>info</h1>
 			{listArticles?.map((elm) => {
 				console.log("elm", elm);
 				return (
-					<>
+					<div className="article">
 						<h2>{elm.article.title}</h2>
 						<img src={elm.article.image} alt={elm.article.title} />
 						<p>{elm.article.description}</p>
-					</>
+					</div>
 				);
 			})}
 		</div>

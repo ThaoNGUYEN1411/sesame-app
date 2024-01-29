@@ -50,7 +50,8 @@ const RegisterForm = () => {
 			<Link href="/" className="sub-title">
 				Have an account? <span>Log in now</span>
 			</Link>
-			{error ? <h3> {error} </h3> : ""}
+
+			{error ? <h4 className="error-message"> {error} </h4> : ""}
 			<form onSubmit={handleSubmit(onSubmit)} className="login-form">
 				<input
 					type="username"

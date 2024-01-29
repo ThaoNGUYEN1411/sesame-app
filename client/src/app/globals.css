@@ -23,8 +23,9 @@ body {
   text-align: center;
   max-width: 50%;
   margin: 0 auto;
+  margin-top: 100px;
 }
-.login-form{
+.login-form {
   text-align: center;
 }
 .register-btn {
@@ -37,23 +38,34 @@ body {
   margin: 0 auto;
   border-radius: 5px;
 }
-.register-btn:hover{
+.register-btn:hover {
   background-color: rgb(60, 60, 243);
 }
-.title{
+.title {
   font-size: 2rem;
 }
-.sub-title{
+.sub-title {
   font-size: 1.2rem;
 }
-/* .error-message {
-    background-color: #ff0000;
-    color: #fff;
-    width: fit-content;
+.title-article{
+  font-size: 2.5rem;
+  text-align: center;
+  margin-top: 2rem;
+}
+.error-message {
+    /* background-color: #ff0000; */
+    color:  #ff0000;
+    /* width: fit-content; */
     font-size: 14px;
     padding: 4px 12px;
     border-radius: 4px;
     margin-top: 8px;
+    text-align: center;
+
+  }
+  /* .text-center{
+    text-align: center;
+
   } */
 
 .login-link {
@@ -71,6 +83,21 @@ input {
   margin: 20px auto;
 }
 
-img{
+img {
   max-width: 100%;
+}
+
+.btn-logout {
+  padding: 10px 30px;
+  background: #34d399;
+  border-radius: 5px;
+  position: absolute;
+  top: 0;
+  right: 200px;
+  text-decoration: none;
+  margin-top: 20px;
+}
+
+.article{
+  margin: 30px 0;
 }
