@@ -48,32 +48,33 @@ const LoginForm = () => {
 	}, [watch]);
 
 	return (
-		<div className="centred-grid full-height">
-			<div className="shadow-box padding-5 rounded-box border-top-4 border-green-400">
-				<h1 className="extra-large-text bold my-4">Login</h1>
-				{error ? <h3> {error} </h3> : ""}
-				<form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-3">
-					<input
-						placeholder="Email"
-						type="email"
-						{...register("email", { required: "Email is required" })}
-					/>
-					<small>{errors.email?.message}</small>
-					<input
-						type="password"
-						{...register("password", { required: "Password is required" })}
-						placeholder="Password"
-					/>
-					<small>{errors.password?.message}</small>
-					<button className="register-btn">Login</button>
-					{/* <input type="submit" className="register-btn" /> */}
-					{/* {error && <div className="error-message">{error}</div>} */}
+		<div className="login-bloc">
+			<h1 className="title">Log in to your account</h1>
+			<Link href="/register" className="sub-title">
+				Don't have an account? <span>Sign up</span>
+			</Link>
 
-					<Link className="login-link" href={"/"}>
+			{error ? <h3> {error} </h3> : ""}
+			<form onSubmit={handleSubmit(onSubmit)} className="login-form">
+				<input
+					placeholder="Email"
+					type="email"
+					{...register("email", { required: "Email is required" })}
+				/>
+				<small>{errors.email?.message}</small>
+				<input
+					type="password"
+					{...register("password", { required: "Password is required" })}
+					placeholder="Password"
+				/>
+				<small>{errors.password?.message}</small>
+				<button className="register-btn">Login</button>
+				{/* {error && <div className="error-message">{error}</div>} */}
+
+				{/* <Link className="login-link" href={"/"}>
 						Already have an account? <span className="underline">Login</span>
-					</Link>
-				</form>
-			</div>
+					</Link> */}
+			</form>
 		</div>
 	);
 };

@@ -45,38 +45,39 @@ const RegisterForm = () => {
 	}, [watch]);
 
 	return (
-		<div className="centred-grid full-height">
-			<div className="shadow-box padding-5 rounded-box border-top-4 border-green-400">
-				<h1 className="extra-large-text bold my-4">Register</h1>
-				{error ? <h3> {error} </h3> : ""}
-				<form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-3">
-					<input
-						type="username"
-						placeholder="Full Name"
-						{...register("username", { required: "Full Name is required" })}
-					/>
-					<small>{errors.email?.message}</small>
-					<input
-						placeholder="Email"
-						type="email"
-						{...register("email", { required: "Email is required" })}
-					/>
-					<small>{errors.email?.message}</small>
-					<input
-						type="password"
-						{...register("password", { required: "Password is required" })}
-						placeholder="Password"
-					/>
-					<small>{errors.password?.message}</small>
-					<button className="register-btn">Register</button>
-					{/* <input type="submit" className="register-btn" /> */}
-					{/* {error && <div className="error-message">{error}</div>} */}
+		<div className="login-bloc">
+			<h1 className="title">Create your accountn</h1>
+			<Link href="/" className="sub-title">
+				Have an account? <span>Log in now</span>
+			</Link>
+			{error ? <h3> {error} </h3> : ""}
+			<form onSubmit={handleSubmit(onSubmit)} className="login-form">
+				<input
+					type="username"
+					placeholder="Full Name"
+					{...register("username", { required: "Full Name is required" })}
+				/>
+				<small>{errors.email?.message}</small>
+				<input
+					placeholder="Email"
+					type="email"
+					{...register("email", { required: "Email is required" })}
+				/>
+				<small>{errors.email?.message}</small>
+				<input
+					type="password"
+					{...register("password", { required: "Password is required" })}
+					placeholder="Password"
+				/>
+				<small>{errors.password?.message}</small>
+				<button className="register-btn">Register</button>
+				{/* <input type="submit" className="register-btn" /> */}
+				{/* {error && <div className="error-message">{error}</div>} */}
 
-					<Link className="login-link" href={"/"}>
-						Already have an account? <span className="underline">Login</span>
-					</Link>
-				</form>
-			</div>
+				{/* <Link className="login-link" href={"/"}> */}
+				{/* Already have an account? <span className="underline">Login</span> */}
+				{/* </Link> */}
+			</form>
 		</div>
 	);
 };
