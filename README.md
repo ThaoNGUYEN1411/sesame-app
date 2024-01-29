@@ -1,5 +1,5 @@
 # Sesame app
-
+Une application permet la création de comptes pour lire des articles.
 ## À propos
  
  Ce référentiel implémente :

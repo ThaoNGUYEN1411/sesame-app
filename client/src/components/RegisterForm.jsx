@@ -18,11 +18,9 @@ const RegisterForm = () => {
 	const onSubmit = async (values) => {
 		console.log(values);
 		const requestBody = values;
-		//???? gui tt cho back nhu the nao de recuperer reponse?
-
 		// créer un message de confirmation
 		// window.sessionStorage permet de stocker des chaînes de caractères dans un navigateur
-		window.sessionStorage.setItem("notice", "Account created");
+		// window.sessionStorage.setItem("notice", "Account created");
 
 		axios
 			.post(`${process.env.NEXT_PUBLIC_API_URL}/auth/signup`, requestBody)
@@ -72,12 +70,6 @@ const RegisterForm = () => {
 				/>
 				<small>{errors.password?.message}</small>
 				<button className="register-btn">Register</button>
-				{/* <input type="submit" className="register-btn" /> */}
-				{/* {error && <div className="error-message">{error}</div>} */}
-
-				{/* <Link className="login-link" href={"/"}> */}
-				{/* Already have an account? <span className="underline">Login</span> */}
-				{/* </Link> */}
 			</form>
 		</div>
 	);

@@ -12,19 +12,19 @@ const { TOKEN_SECRET } = process.env;
 export const signup = (req, res, next) => {
 	const { email, password, username } = req.body;
 
-	// Condition : email pass bien rempli
+	// Condition 1:fill well
 	if (email === "" || password === "") {
 		res.status(400).json({ message: "Provide email and password" });
 		return;
 	}
 
-	// Condition 2 : Email hop le
+	// Condition 2 : Email
 	const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 	if (!emailRegex.test(email)) {
 		res.status(400).json({ message: "Provide a valid email address" });
 	}
 
-	// Condition 3 : Pass hop le
+	// Condition 3: password
 	const passwordRegex = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}/;
 	if (!passwordRegex.test(password)) {
 		res.status(400).json({
@@ -44,7 +44,7 @@ export const signup = (req, res, next) => {
 			const salt = bcrypt.genSaltSync(saltRounds);
 			const hashedPassword = bcrypt.hashSync(password, salt);
 
-			// khi dap ung tat ca cac condition => create new user
+			//condition => create new user
 			return UserModel.create({
 				email: email,
 				password: hashedPassword,
@@ -54,7 +54,6 @@ export const signup = (req, res, next) => {
 		.then((createdUser) => {
 			const { email, password, username } = createdUser;
 			const user = { email, password, username };
-			// gui cho client user gom emlail vaf pass hashed khi signup thanh cong
 			res.status(200).json({ user: user });
 		})
 		.catch((error) => {
@@ -89,7 +88,7 @@ export const login = (req, res, next) => {
 					algorithm: "HS256",
 					expiresIn: "6h",
 				});
-				// gui cho client token khi login thanh con
+				// Send the token to the client upon successful login
 				res.status(200).json({ authToken: authToken });
 			} else {
 				res.status(400).json({ message: "Le mot de passe n'est pas correct" });
@@ -102,9 +101,5 @@ export const login = (req, res, next) => {
 
 /* Verify auth */
 export const verify = (req, res, next) => {
-	console.log(
-		"req.payloadAfterVerifyByExpressjwt",
-		req.payloadAfterVerifyByExpressjwt,
-	);
 	res.status(200).json(req.payloadAfterVerifyByExpressjwt);
 };

@@ -53,9 +53,7 @@ body {
   margin-top: 2rem;
 }
 .error-message {
-    /* background-color: #ff0000; */
     color:  #ff0000;
-    /* width: fit-content; */
     font-size: 14px;
     padding: 4px 12px;
     border-radius: 4px;
@@ -63,10 +61,7 @@ body {
     text-align: center;
 
   }
-  /* .text-center{
-    text-align: center;
 
-  } */
 
 .login-link {
   font-size: 14px;
@@ -75,7 +70,6 @@ body {
 }
 
 input {
-  /* width: 300px; */
   width: 80%;
   padding: 10px;
   display: block;

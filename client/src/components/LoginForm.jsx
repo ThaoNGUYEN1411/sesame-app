@@ -23,7 +23,7 @@ const LoginForm = () => {
 
 		// créer un message de confirmation
 		// window.sessionStorage permet de stocker des chaînes de caractères dans un navigateur
-		window.sessionStorage.setItem("notice", "Account created");
+		// window.sessionStorage.setItem("notice", "Account created");
 
 		axios
 			.post(`${process.env.NEXT_PUBLIC_API_URL}/auth/login`, requestBody)
@@ -69,11 +69,6 @@ const LoginForm = () => {
 				/>
 				<small>{errors.password?.message}</small>
 				<button className="register-btn">Login</button>
-				{/* {error && <div className="error-message">{error}</div>} */}
-
-				{/* <Link className="login-link" href={"/"}>
-						Already have an account? <span className="underline">Login</span>
-					</Link> */}
 			</form>
 		</div>
 	);
